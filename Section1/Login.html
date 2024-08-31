@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .card{
+            width: 20%;
+            padding: 30px;
+            background-color: white;
+            /* border: 2px solid red; */
+            box-shadow: 3px 3px 10px 2px white;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background-image: url('https://wallpapercave.com/wp/wp9764009.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .brand{
+            text-align: center;
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+        .form-title{
+            text-align: center;
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+        .text-input{
+            display: block;
+            width: 90%;
+            margin-bottom: 20px;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: aquamarine;
+            border: none;
+            border-bottom: 2px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2 class="brand">Brand name</h2>
+        <h3 class="form-title">Login Form</h3>
+
+        <fomr>
+            <label for="email">Email Address</label>
+            <input type="email" class="text-input">
+
+            <label for="password">Password</label>
+            <input type="password" class="text-input">
+
+            <button class="submit-btn">Submit</button>
+        </fomr>
+    </div>
+</body>
+</html>

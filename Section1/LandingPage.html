@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .hero-img {
+            background-image: url('https://cdn.dribbble.com/userupload/11965495/file/original-83daf1149fcc7e61eb0ff3776c0ede58.jpg?resize=1024x768');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            height: 40vh;
+            rotate: 180deg;
+        }
+        .container{
+            width: 80%;
+            margin: 0 auto;
+            /* background-color: black; */
+            rotate: 180deg;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .feature-section {
+            padding: 100px 200px; 
+        }
+        .card-container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card{
+            width: 300px;
+            padding: 30px;
+            text-align: center;
+            color: #3f3367;
+            box-shadow: 2px 3px 5px #00000077;
+            border-radius: 20px;
+            transition-duration: 0.4s;
+        }
+        .card:hover{
+            background-color: #3f3367 ;
+            color: white;
+            transform: translateY(-20px);
+        }
+        .section-title{
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 40px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero-img">
+        <div class="container">
+            <h2 style="color: black; font-size: 80px; font-family: serif;">Welcome to Our Website</h2>
+            <!-- <p style="color: black; font-size: 40px; font-family: sans-serif;">We offer amazing services to help you succeed</p> -->
+        </div>
+    </header>
+
+    <main>
+        <section class="feature-section">
+            <h1 class="section-title">Our Features</h1>
+            <div class="card-container">
+                <div class="card">
+                    <i class="fa-4x fa-solid fa-bolt"></i>
+                    <h2>Fast Solution</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, id molestias perspiciatis pariatur ab earum.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-4x fa-solid fa-bolt"></i>
+                    <h2>Fast Solution</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, id molestias perspiciatis pariatur ab earum.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-4x fa-solid fa-bolt"></i>
+                    <h2>Fast Solution</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, id molestias perspiciatis pariatur ab earum.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
