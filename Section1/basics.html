@@ -4,22 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <style>
+        h1 {
+            color: blue;
+        }
+
+        .tag{
+            color: green;
+            font-size: 50px;
+        }
+        #tags{
+            color: red;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>My First Web App</h1>
-    <h6>Welcome!</h6>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="https://nodejs.org/en">Node js</a><br><br>
-    <img src="https://tse4.mm.bing.net/th?id=OIP.mh5TQs-LZ48hqtbkJSeAsgHaEG&pid=Api&P=0&h=180" alt="loading"/>
-    <!-- <img src="pic.jpg" alt=""> -->
-    <br><br>
-    <ol>
-        <li>item1</li>
-        <li>item2</li>
-    </ol>
-    <ul>
-        <li>item1</li>
-        <li>item2</li>
-    </ul>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-img">
+            <h1>Hero Image</h1>
+        </div>
+
+    </header>
+
+    <main>
+        <section>
+            <h1 class="tag" style="color: red;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, repellat.</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, repellat.</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, repellat.</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, repellat.</h1>
+            <h1 class="tag" id="tags">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, repellat.</h1>
+        </section>
+
+        <section>
+            intro
+        </section>
+
+        <section>
+            contact
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2021</p>
+    </footer>
 </body>
 </html>
