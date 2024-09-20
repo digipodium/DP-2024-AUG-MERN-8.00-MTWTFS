@@ -3,6 +3,7 @@
 // 2. if-else statement
 // 3. if-else-if statement
 // 4. switch statement
+// 5. ternary operator
 
 // if statement
 let age = 18
@@ -65,4 +66,10 @@ switch (day) {
     default:
         console.log("Invalid day")
 }
+
+console.log('--------------------------')
+// ternary operator
+let age2 = 18
+let message = age2 < 18 ? "You are a minor" : age2>=18 && age2<60 ? "You are an adult" : "You are a senior"
+console.log(message)
 
