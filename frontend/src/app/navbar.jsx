@@ -35,23 +35,36 @@ const Navbar = () => {
                       >
                         Event Handling
                       </Link>
-  
+                      <Link
+                        className="p-2 flex items-center text-sm bg-gray-100 text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100"
+                        href="/counterExample"
+                        aria-current="page"
+                      >
+                        Counter
+                      </Link>
+                      <Link
+                        className="p-2 flex items-center text-sm bg-gray-100 text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100"
+                        href="/todo"
+                        aria-current="page"
+                      >
+                        Todo
+                      </Link>
                     </div>
                   </div>
                   {/* Button Group */}
                   <div className="md:ms-auto mt-2 md:mt-0 flex flex-wrap items-center gap-x-1.5">
-                    <a
+                    <Link
                       className="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100"
-                      href="#"
+                      href="/login"
                     >
                       Sign in
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       className="py-2 px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                      href="#"
+                      href="/signup"
                     >
-                      Get started
-                    </a>
+                      Register
+                    </Link>
                   </div>
                   {/* End Button Group */}
                 </div>

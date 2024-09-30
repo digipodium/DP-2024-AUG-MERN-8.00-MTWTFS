@@ -1,6 +1,22 @@
+'use client'
 import React from 'react'
+import {useFormik} from 'formik'
+import * as Yup from 'yup'
 
 const Signup = () => {
+
+  const signupForm = useFormik({
+    initialValues: {
+      name:'',
+      email:'',
+      password:'',
+    },
+    onSubmit: (values, {resetForm}) => {
+      console.log(values)
+      resetForm()
+    }
+  })
+
   return (
     <div>
       <>
@@ -53,7 +69,7 @@ const Signup = () => {
                 Or
               </div>
               {/* Form */}
-              <form>
+              <form onSubmit={signupForm.handleSubmit}>
                 <div className="mb-4">
                   <label
                     htmlFor="hs-hero-name-2"
@@ -63,9 +79,11 @@ const Signup = () => {
                   </label>
                   <input
                     type="text"
-                    id="hs-hero-name-2"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                     placeholder="Full name"
+                    id="name"
+                    onChange={signupForm.handleChange}
+                    value = {signupForm.values.name}
                   />
                 </div>
                 <div className="mb-4">
@@ -77,9 +95,11 @@ const Signup = () => {
                   </label>
                   <input
                     type="email"
-                    id="hs-hero-email-2"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                     placeholder="Email address"
+                    id="email"
+                    onChange={signupForm.handleChange}
+                    value = {signupForm.values.email}
                   />
                 </div>
                 <div className="mb-4">
@@ -90,10 +110,12 @@ const Signup = () => {
                     <span className="sr-only">Password</span>
                   </label>
                   <input
-                    type="email"
-                    id="hs-hero-password-2"
+                    type="password"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                     placeholder="Password"
+                    id="password"
+                    onChange={signupForm.handleChange}
+                    value = {signupForm.values.password}
                   />
                 </div>
                 <div className="grid">
@@ -113,6 +135,7 @@ const Signup = () => {
         </div>
         {/* End Hero */}
       </>
+
 
     </div>
   )
