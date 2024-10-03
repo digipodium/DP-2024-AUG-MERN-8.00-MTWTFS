@@ -3,6 +3,25 @@ import React from 'react'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 
+const SignupSchema = Yup.object().shape({
+  name : Yup.string()
+  .min(2, 'Name must be at least 2 characters')
+  .max(50, 'Name must be at most 50 characters')
+  .required('Name is required'),
+
+  email : Yup.string()
+  .email('Please enter a valid email address')
+  .required('Email is required'),
+
+  password : Yup.string()
+  .min(8, 'Password must be at least 8 characters')
+  .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
+  .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
+  .matches(/[0-9]/, 'Password must contain at least one number')
+  .matches(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/, 'Password must contain at least one special character')
+  .required('Password is required'),
+})
+
 const Signup = () => {
 
   const signupForm = useFormik({
@@ -14,7 +33,8 @@ const Signup = () => {
     onSubmit: (values, {resetForm}) => {
       console.log(values)
       resetForm()
-    }
+    },
+    validationSchema: SignupSchema
   })
 
   return (
@@ -77,6 +97,9 @@ const Signup = () => {
                   >
                     <span className="sr-only">Full name</span>
                   </label>
+                  {signupForm.errors.name && signupForm.touched.name ? (
+                    <div className='text-red-500 text-sm'>{signupForm.errors.name}</div>
+                  ): null}
                   <input
                     type="text"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
@@ -93,6 +116,9 @@ const Signup = () => {
                   >
                     <span className="sr-only">Email address</span>
                   </label>
+                  {signupForm.errors.email && signupForm.touched.email ? (
+                    <div className='text-red-500 text-sm'>{signupForm.errors.email}</div>
+                  ): null}
                   <input
                     type="email"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
@@ -109,6 +135,9 @@ const Signup = () => {
                   >
                     <span className="sr-only">Password</span>
                   </label>
+                  {signupForm.errors.password && signupForm.touched.password ? (
+                    <div className='text-red-500 text-sm'>{signupForm.errors.password}</div>
+                  ): null}
                   <input
                     type="password"
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
