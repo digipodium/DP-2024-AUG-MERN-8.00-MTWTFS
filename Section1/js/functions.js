@@ -75,3 +75,22 @@ const evenOdd = () => {
     }
 }
 evenOdd()
+
+console.log("---------------------------")
+// const fun = N => {
+//     var n = 10;
+//     return N+2;
+// }
+// console.log(n)
+
+const addNum2 = (a,b) => {
+    let c = a+b
+    console.log(c)
+}
+const res = addNum2(45,67)
+console.log(res)
+
+console.log("---------------------------")
+
+const fruits = ['apple', 'banana', 'orange', 'grape','mango']
+console.log(fruits.slice(2))

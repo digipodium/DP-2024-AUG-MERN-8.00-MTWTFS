@@ -41,6 +41,20 @@ const Data = [
         humidity: '70%',
         img : 'https://www.fabhotels.com/blog/wp-content/uploads/2018/09/Gateway-of-India-1.jpg'
     },
+    {
+        id: 6,
+        location: 'Mumbai',
+        temperature: 29,
+        humidity: '70%',
+        img : 'https://www.fabhotels.com/blog/wp-content/uploads/2018/09/Gateway-of-India-1.jpg'
+    },
+    {
+        id: 6,
+        location: 'Mumbai',
+        temperature: 29,
+        humidity: '70%',
+        img : 'https://www.fabhotels.com/blog/wp-content/uploads/2018/09/Gateway-of-India-1.jpg'
+    },
     
 ]
 export default Data;
