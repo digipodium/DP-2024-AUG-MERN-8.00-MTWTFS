@@ -3,6 +3,7 @@ import React from 'react'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import toast from 'react-hot-toast'
+import classes from './Signup.module.css'
 
 const SignupSchema = Yup.object().shape({
   name : Yup.string()
@@ -47,10 +48,11 @@ const Signup = () => {
           <div className="mx-auto max-w-screen-md py-12 px-4 sm:px-6 md:max-w-screen-xl md:py-20 lg:py-32 md:px-8">
             <div className="md:pe-8 md:w-1/2 xl:pe-0 xl:w-5/12">
               {/* Title */}
+             
               <h1 className="text-3xl text-gray-800 font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight">
                 Solving problems for every <span className="text-blue-600">team</span>
               </h1>
-              <p className="mt-3 text-base text-gray-500">
+              <p className={classes.para}>
                 Built on standard web technology, teams use Preline to build beautiful
                 cross-platform hybrid apps in a fraction of the time.
               </p>
