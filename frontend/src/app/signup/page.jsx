@@ -4,6 +4,8 @@ import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import toast from 'react-hot-toast'
 import classes from './Signup.module.css'
+import axios from 'axios'
+
 
 const SignupSchema = Yup.object().shape({
   name : Yup.string()
@@ -34,8 +36,18 @@ const Signup = () => {
     },
     onSubmit: (values, {resetForm}) => {
       console.log(values)
-      resetForm()
-      toast.success('Signup successfully')
+      
+      axios.post('http://localhost:5000/user/add', values)
+      .then((response) => {
+        console.log(response.status)
+        resetForm()
+        toast.success('User added successfully')
+
+      }).catch((err) => {
+        console.log(err)
+        toast.error('Failed to add user')
+      });
+
     },
     validationSchema: SignupSchema
   })

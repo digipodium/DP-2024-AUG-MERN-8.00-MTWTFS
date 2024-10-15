@@ -16,4 +16,15 @@ router.post('/add', (req,res) => {
     });
 })
 
+router.get('/getall', (req,res) => {
+    // empty bracket means get all data 
+    Model.find()
+    .then((result) => {
+        res.json(result)
+    }).catch((err) => {
+        console.log(err)
+        res.status(500).json({error: 'Internal Server Error'})
+    });
+})
+
 module.exports = router;
