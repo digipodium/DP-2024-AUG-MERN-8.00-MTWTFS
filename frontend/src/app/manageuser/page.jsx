@@ -2,6 +2,7 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import Link from 'next/link'
 
 const Manageuser = () => {
 
@@ -63,7 +64,7 @@ const Manageuser = () => {
                       <button className='bg-red-500 text-white px-4 py-2 rounded-lg'>Delete</button>
                     </td>
                     <td className='p-2 border border-violet-700'>
-                      <button className='bg-blue-500 text-white px-4 py-2 rounded-lg'>Update</button>
+                      <Link href={'/updateUser/' + user._id} className='bg-blue-500 text-white px-4 py-2 rounded-lg'>Update</Link>
                     </td>
                   </tr>
                 })
