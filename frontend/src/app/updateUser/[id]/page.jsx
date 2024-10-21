@@ -9,7 +9,7 @@ import { useParams, useRouter } from 'next/navigation'
 const UpdateUser = () => {
 
     const { id } = useParams()
-    const [userData, setUserData] = useState({})
+    const [userData, setUserData] = useState(null);
 
     const fetchUserData = async () => {
         const res = await axios.get(`http://localhost:5000/user/getbyid/${id}`)
