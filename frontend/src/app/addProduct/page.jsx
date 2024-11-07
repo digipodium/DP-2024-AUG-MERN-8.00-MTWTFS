@@ -134,32 +134,27 @@ const AddProduct = () => {
                                 />
                             </div>
                         </div>
-                        {/* <label className="block">
-                            <label htmlFor='uploade-image' className="sr-only" style={{ fontFamily: "initial" }}>Choose profile photo</label>
-                            <input onChange={uploadeImage} type="file" id='update-image' className="block w-full text-sm text-gray-500 
-                                       file:me-4 file:py-2 file:px-4
-                                       file:rounded-lg file:border-0
-                                       file:text-sm file:font-semibold
-                                       file:bg-blue-600 file:text-white
-                                       hover:file:bg-blue-700
-                                       file:disabled:opacity-50 file:disabled:pointer-events-none
-                                       dark:file:bg-blue-500
-                                       dark:hover:file:bg-blue-400
-                                       "/>
-                        </label> */}
-                        {/* <label className="block">
-                            <label htmlFor='uploade-image' className="sr-only" style={{ fontFamily: "initial" }}>Choose profile photo</label>
-                            <input onChange={uploadeVideos} type="file" id='update-image' className="block w-full text-sm text-gray-500 
-                                       file:me-4 file:py-2 file:px-4
-                                       file:rounded-lg file:border-0
-                                       file:text-sm file:font-semibold
-                                       file:bg-blue-600 file:text-white
-                                       hover:file:bg-blue-700
-                                       file:disabled:opacity-50 file:disabled:pointer-events-none
-                                       dark:file:bg-blue-500
-                                       dark:hover:file:bg-blue-400
-                                       "/>
-                        </label> */}
+                        <div>
+                            <label style={{ fontFamily: "initial" }}
+                                htmlFor="category"
+                                className="fw-bold block text-sm font-medium leading-6 text-gray-900"
+                            >
+                                Image URL
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="image"
+                                    value={AddProduct.values.image}
+                                    onChange={AddProduct.handleChange}
+                                 
+                                    type="text"
+                                    autoComplete="category"
+                                    required=""
+                                    className=" outline  outline-1 block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+
 
                         <div>
                             <button style={{ fontFamily: "initial" }}

@@ -29,6 +29,7 @@ const Browse = () => {
             <div className="conatainer">
                 <div className="col-md-4">
                     <div className="card p-3 mb-5 bg-dark p-card">
+                    <img src={obj.image} alt="" className="img-fluid ms-3" style={{height:"200px"}} />
                         <h3 style={{ paddingLeft: "20px" }} className="mt-3 text-light">{obj.title}</h3>
                         <p style={{ paddingLeft: "20px" }} className="text-light">{obj.category}</p>
                         <Link href={'/view/' + obj._id} className="btn btn-outline-primary m-2">Know More</Link>

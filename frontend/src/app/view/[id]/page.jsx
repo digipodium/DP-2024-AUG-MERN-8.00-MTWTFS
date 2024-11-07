@@ -31,7 +31,7 @@ const View = () => {
             <div className="card my-4 shadow">
               <div className="row my-5">
                 <div className="col-md-4">
-                  <img src={"http://localhost:5000/" + productList.image} alt="" className="img-fluid ms-3" style={{height:"200px"}} />
+                  <img src={productList.image} alt="" className="img-fluid ms-3" style={{height:"200px"}} />
                 </div>
                 <div className="col-md-6">
                   <h1 className='fw-bold py-2' style={{color:"teal", fontFamily:"initial"}}>Title: {productList.title}</h1>
