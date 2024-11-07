@@ -6,8 +6,6 @@ import Link from 'next/link'
 const Browse = () => {
     const [product, setProduct] = useState([]);
 
-    //   const { category } = useParams();
-
     const fetchProduct = async () => {
         const res = await fetch("http://localhost:5000/product/getall");
 
@@ -21,10 +19,10 @@ const Browse = () => {
             setProduct(data)
         }
     };
-
     useEffect(() => {
         fetchProduct();
     }, []);
+
 
     const displayProduct = () => {
         return product.map((obj) => (
