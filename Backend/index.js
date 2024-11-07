@@ -4,6 +4,7 @@ const port = 5000;
 const cors = require('cors')
 
 const UserRouter = require('./routers/user')
+const ProductRouter = require('./routers/Product')
 
 // middleware
 app.use(express.json())
@@ -12,6 +13,7 @@ app.use(cors({
 }))
 
 app.use('/user', UserRouter)
+app.use('/product', ProductRouter)
 
 app.listen(port,() => {
     console.log(`Server is running on port ${port}`)
