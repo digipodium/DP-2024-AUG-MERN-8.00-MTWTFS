@@ -34,7 +34,6 @@ const Browse = () => {
                         <p style={{ paddingLeft: "20px" }} className="text-light">{obj.category}</p>
                         <Link href={'/view/' + obj._id} className="btn btn-outline-primary m-2">Know More</Link>
 
-
                     </div>
                 </div>
             </div>

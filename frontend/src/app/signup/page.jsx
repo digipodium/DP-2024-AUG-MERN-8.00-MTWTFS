@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 import classes from './Signup.module.css'
 import axios from 'axios'
 import {useRouter} from 'next/navigation'
+import useAppContext from '@/context/appContext'
 
 
 const SignupSchema = Yup.object().shape({
@@ -30,6 +31,8 @@ const SignupSchema = Yup.object().shape({
 const Signup = () => {
 
   const router = useRouter()
+
+  const {setLoggedIn} = useAppContext();
 
   const signupForm = useFormik({
     initialValues: {

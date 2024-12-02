@@ -1,8 +1,12 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
+import useAppContext from '@/context/appContext';
 
 const Navbar = () => {
+  const { loggedIn, logout } = useAppContext();
+
+  // console.log(isLoggedIn);
   return (
     <div>
       <>
@@ -52,21 +56,33 @@ const Navbar = () => {
                     </div>
                   </div>
                   {/* Button Group */}
-                  <div className="md:ms-auto mt-2 md:mt-0 flex flex-wrap items-center gap-x-1.5">
-                    <Link
-                      className="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100"
-                      href="/login"
-                    >
-                      Sign in
-                    </Link>
-                    <Link
-                      className="py-2 px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                      href="/signup"
-                    >
-                      Register
-                    </Link>
-                  </div>
-                  {/* End Button Group */}
+                  {loggedIn ? (
+                    <div className="md:ms-auto mt-2 md:mt-0 flex flex-wrap items-center gap-x-1.5">
+                      <button
+                        className="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
+                        onClick={logout}
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="md:ms-auto mt-2 md:mt-0 flex flex-wrap items-center gap-x-1.5">
+                      <Link
+                        className="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100"
+                        href="/login"
+                      >
+                        Sign in
+                      </Link>
+                      <Link
+                        className="py-2 px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                        href="/signup"
+                      >
+                        Register
+                      </Link>
+                    </div>
+
+                  )}
+
                 </div>
               </div>
             </div>
