@@ -1,12 +1,12 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import useAppContext from '@/context/appContext';
+import useAppContext from '@/context/appContext'
 
 const Navbar = () => {
+
   const { loggedIn, logout } = useAppContext();
 
-  // console.log(isLoggedIn);
   return (
     <div>
       <>
@@ -59,7 +59,7 @@ const Navbar = () => {
                   {loggedIn ? (
                     <div className="md:ms-auto mt-2 md:mt-0 flex flex-wrap items-center gap-x-1.5">
                       <button
-                        className="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
+                        className="py-[7px] px-2.5 inline-flex items-center font-medium text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                         onClick={logout}
                       >
                         Logout
@@ -80,9 +80,7 @@ const Navbar = () => {
                         Register
                       </Link>
                     </div>
-
                   )}
-
                 </div>
               </div>
             </div>
