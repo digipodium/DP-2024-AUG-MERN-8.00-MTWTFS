@@ -5,8 +5,7 @@ import Link from 'next/link'
 
 const Browse = () => {
     const [product, setProduct] = useState([]);
-    const [profiles, setProfile] = useState([])
-    const [masterList, setMasterList] = useState([]);
+    const [filterList, setfilterList] = useState([])
 
     const fetchProduct = async () => {
         const res = await fetch("http://localhost:5000/product/getall");
@@ -19,6 +18,7 @@ const Browse = () => {
             // const data = await res.json();
             console.log(data);
             setProduct(data)
+            setfilterList(data);
         }
     };
     useEffect(() => {
@@ -44,17 +44,17 @@ const Browse = () => {
 
     const applysearch = (e) => {
         const value = e.target.value;
-        setProduct(product.filter((profiles) => {
-            return (profiles.title.toLowerCase().includes(value.toLowerCase()));
-        }));
+        setProduct(product.filter((product) => {
+            return (product.title.toLowerCase().includes(value.toLowerCase()))
+        }))
     }
 
-    const filterbyCategory = (category) => {
-        console.log(category)
-        const filtercategory = product.filter(cat => cat.category.toLowerCase().includes(category.toLowerCase()));
-        setProduct(filtercategory)
-    }
-
+    const filterByCategory = (product) => {
+        console.log(product);
+        const filteredProduct = filterList.filter(col => col.category.toLowerCase().includes(product.toLowerCase()));
+        setProduct(filteredProduct);
+      }
+   
 
     return (
         <div className=''>
@@ -166,9 +166,9 @@ const Browse = () => {
                                 {/* End SVG Element */}
                             </div>
                             <div className="mt-10 sm:mt-20">
-                                <a
+                                <button
                                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                                    href="#"
+                                    onClick={(e) => filterByCategory('Clock')}
                                 >
                                     <svg
                                         className="shrink-0 size-4"
@@ -185,8 +185,8 @@ const Browse = () => {
                                         <rect width={20} height={14} x={2} y={7} rx={2} ry={2} />
                                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                                     </svg>
-                                    Business
-                                </a>
+                                    Wall Clock
+                                </button>
                                 <a
                                     className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                                     href="#"
